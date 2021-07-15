@@ -1,0 +1,286 @@
+.Todo-App{
+    min-height: 100vh;
+    background-color: rgb(230, 230, 250);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+    
+}
+
+.main-page{
+    height: 220px;
+    width: 100%;
+    background-color: rgb(199, 199, 243);
+}
+.heading {
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+.search-input{
+    font-size: 26px;
+    border: none;
+    padding: 5px;
+    width: 400px;
+
+}
+
+.search-btn{
+    width: 150px;
+    font-size: 28px;
+    padding: 5px;
+    background-color: rgb(63, 181, 211);
+    color: white;
+    border: none;
+
+}
+
+.addtask-btn{
+    margin:30px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(135, 220, 241);
+    color: white;
+    border: none;
+    padding: 5px;
+    width: 200px;
+
+}
+
+.addtask-btn:hover{
+    background-color: rgb(116, 208, 231);
+    
+}
+
+.addtask-btn:active{
+    background-color: rgb(116, 208, 231);
+    transform: translateY(2px);
+
+}
+
+.search-btn:hover{
+    background-color: rgb(41, 162, 192);
+
+}
+
+.search-btn:active{
+    background-color: rgb(41, 162, 192);
+    transform: translateY(2px);
+}
+
+.create-heading, .edit-heading{
+    font-weight: bold;
+    font-size:40px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.create-task {
+    border: 2px black;
+    /* display: block; */
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
+    position: fixed;
+    height: 650px;
+    width: 700px;
+    top: 20%;
+    left: 40%; 
+    margin-top: -50px;
+    margin-left: -100px; 
+    padding: 25px;
+    z-index: 100;
+    background-color: rgba(194, 194, 240, 0.897);
+    
+
+
+}
+
+.edit-task {
+
+    border: 2px black;
+    /* display: block; */
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
+    position: fixed;
+    height: 580px;
+    width: 700px;
+    top: 20%;
+    left: 40%; 
+    margin-top: -50px;
+    margin-left: -100px; 
+    padding: 25px;
+    z-index: 100;
+    background-color: rgba(194, 194, 240, 0.897);
+
+}
+
+.create-heading{
+    font-size: 40px;
+}
+.create-task-label, .edit-task-label{
+    font-weight: bold;
+    font-size: 30px;
+    /* text-align: left !important; */
+
+
+}
+.priority-select{
+    width: 100%;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color:rgb(63, 181, 211) ;
+    border:rgb(63, 181, 211);
+    margin:8px;
+}
+
+.priority-select:active{
+    border:none;
+    background-color: rgb(41, 162, 192);
+
+
+}
+
+
+.priority-item{
+    width: 100%;
+    background-color: white;
+}
+.priority-item:hover{
+    background-color: rgb(82, 80, 82);
+}
+
+.task-input{
+    font-size: 20px;
+    margin:10px;
+    padding:10px;
+}
+
+
+.submit-task-btn, .update-btn{
+    background-color: rgb(135, 220, 241);
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.submit-task-btn:hover, .update-btn:hover{
+    background-color: rgb(116, 208, 231);
+}
+
+.submit-task-btn:active, .update-btn:active{
+    background-color: rgb(116, 208, 231);
+    transform: translateY(2px);
+
+
+}
+
+
+.cancel-task-btn, .cancel-update-btn{
+    background-color: rgb(93, 95, 95);
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.cancel-task-btn:hover, .cancel-update-btn:hover{
+    background-color: rgb(63, 65, 65);
+}
+
+.cancel-task-btn:active, .cancel-update-btn:active{
+    background-color: rgb(63, 65, 65);
+    transform: translateY(2px);
+
+
+}
+
+.task-list{
+    display: flex;
+    flex-direction: row;
+    border: 4px black;
+    background-color: whitesmoke;
+    flex-wrap: wrap;
+    margin:15px;
+    padding: 10px;
+    border-radius: 10px;
+
+
+}
+
+
+.todo-item{
+   font-size: 25px;
+   margin:10px;
+    padding: 10px;
+    color: rgb(3, 64, 133);
+    gap: 60px;
+    
+
+}
+
+.currDate{
+    margin:10px;
+    padding: 10px;
+    color: rgb(3, 64, 133);
+    font-size: 25px;
+
+
+
+
+}
+
+.currTime{
+    margin:10px;
+    padding: 10px;
+    color: rgb(3, 64, 133);
+    font-size: 25px;
+
+
+}
+
+.edit-btn{
+    background-color: rgb(144, 109, 238);
+    width: 90px;
+    height: 45px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.edit-btn:hover{
+    background-color: rgb(135, 97, 238);
+}
+
+.edit-btn:active{
+    background-color: rgb(135, 97, 238);
+    transform: translateY(2px);
+}
+
+
+.delete-btn{
+    background-color: tomato;
+    width: 90px;
+    height: 45px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 10px;
+    
+
+}
