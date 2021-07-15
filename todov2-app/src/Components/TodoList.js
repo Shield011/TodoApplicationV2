@@ -1,12 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
+import EditTodo from './EditTodo'
 
 
-function TodoList({text}) {
+function TodoList({todos, todo, setTodos, text}) {
+    const[visible, setVisible] = useState("")
+    const toggle =()=>{
+        setVisible(!visible)
+    }
+
+    const deleteHandler = () => {
+        setTodos(todos.filter(el => el.id !== todo.id));
+    };
+
+    const editHandler = (id) => {
+
+
+    }
+
     return (
         <div>
             <li className = "todo-item">{text}</li>
-            <button className = "edit-todo-button">Edit</button>
-            <button className = "delete-todo-button">Delete</button>
+            <button onClick = {() => setVisible("active")}>Edit</button>
+            {visible === "active" && <EditTodo/>}
+            <button onClick = {deleteHandler} className = "delete-todo-button">Delete</button>
             
         </div>
     )

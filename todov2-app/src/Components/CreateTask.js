@@ -1,24 +1,22 @@
 import React, {useState} from 'react'
-import TodoList from './TodoList';
 
-function CreateTask({toggle}) {
 
-    const[input, setInput] = useState("");
-    const[todos, setTodos] = useState([]);
-
+function CreateTask({toggle, input, setInput, todos, setTodos}) {
   
 
     const InputChangeHandler = (e) => {
         setInput(e.target.value);
-        // console.log(e.target.value);
       };
     const submitHandler = (e) => {
         e.preventDefault();
         setTodos([
-            ...todos, {text:input, id: Math.floor(Math.random()*10000)}
+            ...todos, {text:input, id: Math.floor(Math.random()*10000)},
         ]);
+        toggle();
+       
         setInput("");
-    }
+    };
+   
     
     
     return (
@@ -28,11 +26,12 @@ function CreateTask({toggle}) {
             <form > 
                 <label>Add task</label>
                 <input type = 'text' value = {input} onChange={InputChangeHandler} name = "taskName"></input>
-                <button onClick = {submitHandler}>Add</button>
+                <button type = "submit" onClick = {submitHandler} >Add</button>
                 <button onClick = {toggle}>Cancel</button>
             </form>
             
         </div>
+       
        
     )
 }
