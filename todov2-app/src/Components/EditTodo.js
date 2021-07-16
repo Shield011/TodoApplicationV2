@@ -2,10 +2,7 @@ import React, { useState } from "react";
 
 function EditTodo({
   toggle,
-  todos,
   todo,
-  setTodos,
-  text,
   editInput,
   setEditInput,
 }) {

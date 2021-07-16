@@ -32,8 +32,25 @@ function Todo() {
   const changeHandler = (e) => {
     setSearchInput(e.target.value);
   };
+  
+  useEffect(() => {
+    const sortTodos = (type) => {
+        const types = {
 
- 
+            id : "id",
+            Name : "Name",
+            
+        };
+        console.log("Clicked")
+        const sortProperty = types[type];
+        console.log("Todod:",todos);
+        const sorted = [...todos].sort((a, b) => b[sortProperty] - a[sortProperty]); 
+        console.log(sorted);
+        console.log(sortType);
+        setData(sorted);
+    }
+    sortTodos(sortType);
+}, [sortType]);
 
   
 
