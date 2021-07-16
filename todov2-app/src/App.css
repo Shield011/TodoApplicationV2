@@ -97,7 +97,6 @@
 
 .create-task {
   border: 2px black;
-  /* display: block; */
   margin: 10px;
   border-radius: 10px;
   border-style: none;
@@ -115,7 +114,6 @@
 
 .edit-task {
   border: 2px black;
-  /* display: block; */
   margin: 10px;
   border-radius: 10px;
   border-style: none;
@@ -138,7 +136,7 @@
 .edit-task-label {
   font-weight: bold;
   font-size: 30px;
-  /* text-align: left !important; */
+ 
 }
 .priority-select {
   width: 100%;
@@ -152,7 +150,7 @@
 
 .priority-select:active {
   border: none;
-  background-color: rgb(41, 162, 192);
+  background-color: rgb(255, 255, 255);
 }
 
 .priority-item {
@@ -219,7 +217,6 @@
   flex-wrap: wrap;
   border: 4px black;
   background-color: whitesmoke;
-  
   margin: 15px;
   padding: 10px;
   border-radius: 10px;
@@ -231,7 +228,7 @@
   padding: 10px;
   color: rgb(3, 16, 31);
   font-weight: bold;
-  
+
 
 }
 

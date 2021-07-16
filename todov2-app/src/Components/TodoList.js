@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import EditTodo from "./EditTodo";
 
-function TodoList({ todos, todo, setTodos, text, editInput, setEditInput , date, time}) {
+function TodoList({
+  todos,
+  todo,
+  setTodos,
+  text,
+  editInput,
+  setEditInput,
+  date,
+  time,
+}) {
   const [visible, setVisible] = useState("");
 
   const toggle = () => {

@@ -9,50 +9,68 @@ function Todo() {
   const [editInput, setEditInput] = useState();
   const [searchInput, setSearchInput] = useState();
   const [data, setData] = useState([]);
-  const[sortType, setSortType] = useState('');
+  const [sortType, setSortType] = useState("");
 
-  
+
   const toggle = () => {
     setShow(!show);
   };
 
-//   const onSearch = (e) => {
-//     setSearchInput(e.target.value);
-//     if (e.target.value.length === 0) {
-//       setTodos(temptodos);
-//     } else {
-//       const filteredresult = todos.filter(
-//         (item) => item.text === e.target.value
-//       );
-//       setTodos(filteredresult);
-//       console.log(filteredresult);
-//     }
-//   };
+  let tempArr = [];
+ 
+  const onSearch = () => {
+      console.log(searchInput);
+    if (searchInput.length === 0) {
+        tempArr = todos;
+    } else {
+        for (let i of todos) {
+            if (i.text.includes(searchInput)){
+                tempArr.push(i);
+            }
+            
+        }
+        
+    }
+    console.log("tempArr", tempArr);
+  };
 
   const changeHandler = (e) => {
     setSearchInput(e.target.value);
+    console.log(searchInput)
   };
-  
+
   useEffect(() => {
+    
     const sortTodos = (type) => {
-        const types = {
+      const types = {
+        id: "id",
+        text: "text",
+        Date: "Date",
+        Time: "Time",
+      };
+      console.log("Clicked");
+      const sortProperty = types[type];
+      console.log("Todod:", todos);
 
-            id : "id",
-            Name : "Name",
-            
-        };
-        console.log("Clicked")
-        const sortProperty = types[type];
-        console.log("Todod:",todos);
-        const sorted = [...todos].sort((a, b) => b[sortProperty] - a[sortProperty]); 
-        console.log(sorted);
-        console.log(sortType);
-        setData(sorted);
-    }
+    let Compare = (a, b) => {
+            if(a[sortProperty] > b[sortProperty]) return 1;
+            else if(a[sortProperty] < b[sortProperty]) return -1;
+            else return 0;
+        }
+
+    
+      const sorted = [...todos].sort(Compare);
+      console.log(sorted);
+      console.log("sortProperty:", sortProperty);
+      console.log(sortType);
+      setData(sorted);
+     
+        <Todo />
+          
+      
+    };
     sortTodos(sortType);
-}, [sortType]);
-
-  
+  }, [sortType]);
 
   return (
     <>
@@ -66,7 +84,7 @@ function Todo() {
             placeholder="Search..."
             onChange={changeHandler}
           ></input>
-          <button className="search-btn">
+          <button className="search-btn" onClick={onSearch}>
             Search
           </button>
         </div>
@@ -76,9 +94,20 @@ function Todo() {
         </button>
         <div className="filter-dropdown">
           <label className="Filter-title">Filter:</label>
-          <select className="filter-list" onChange={(e) => setSortType(e.target.value)}>
-            <option value = "id">id</option>
-            <option className="filter-Item"  value = "Name">
+          <select
+            className="filter-list"
+            onClick = {(e) => setSortType(e.target.value)}
+          >
+            <option className="filter-Item" value="id">
+              ID
+            </option>
+            <option className="filter-Item" value="Date">
+              Date
+            </option>
+            <option className="filter-Item" value="Time">
+              Time
+            </option>
+            <option className="filter-Item" value="text">
               Name
             </option>
           </select>
@@ -104,8 +133,8 @@ function Todo() {
             key={todo.id}
             editInput={editInput}
             setEditInput={setEditInput}
-            date = {todo.date}
-            time = {todo.time}
+            date={todo.date}
+            time={todo.time}
           />
         ))}
       </div>
