@@ -9,10 +9,6 @@ function EditTodo({
   editInput,
   setEditInput,
 }) {
-  console.log("hi");
-  console.log(todo.id);
-  console.log("blaah");
-
   const editChangeHandler = (e) => {
     setEditInput(e.target.value);
   };
