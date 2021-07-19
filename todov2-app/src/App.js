@@ -4,8 +4,9 @@ import Todo from "./Components/Todo";
 
 function App() {
   return (
-    <div className="Todo-App">
-      <Todo />
+    <div className="Todo-App"> 
+      
+        <Todo />
     </div>
   );
 }

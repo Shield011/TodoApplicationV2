@@ -22,16 +22,35 @@ function TodoList({
   };
 
   return (
-    <div className="task-list">
-      <li className="todo-item">{text}</li>
-      <p className="currDate">{date}</p>
-      <p className="currTime">{time}</p>
-      <button className="edit-btn" onClick={() => setVisible("active")}>
-        Edit
-      </button>
-      <button className="delete-btn" onClick={deleteHandler}>
-        Delete
-      </button>
+    <div className="todo-table-list">
+         <table>
+        <tr>
+          <th>TaskName</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Options</th>
+        </tr>
+     
+     
+     
+        <tr>
+          <td>{text}</td>
+          <td>{date}</td>
+          <td>{time}</td>
+          <td>
+            {" "}
+            <button className="edit-btn" onClick={() => setVisible("active")}>
+              Edit{" "}
+            </button>
+          
+            {" "}
+            <button className="delete-btn" onClick={deleteHandler}>
+              Delete{" "}
+            </button>
+          </td>
+        </tr>
+      </table>
+
       {visible === "active" && (
         <EditTodo
           toggle={toggle}

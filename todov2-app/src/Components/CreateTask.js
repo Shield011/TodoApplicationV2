@@ -1,17 +1,17 @@
-import React from "react";
+import React, {useRef} from "react";
 
 function CreateTask({ toggle, input, setInput, todos, setTodos }) {
   const InputChangeHandler = (e) => {
     setInput(e.target.value);
 };
 
-        var tempDate = new Date();
-        var date =
-        tempDate.getFullYear() +
-        "-" +
+        let tempDate = new Date();
+        let date =
+        tempDate.getDate() +
+        "/" +
         (tempDate.getMonth() + 1) +
-        "-" +
-        tempDate.getDate();
+        "/" +
+        tempDate.getFullYear();
     var time = tempDate.getHours() + ":" + tempDate.getMinutes();
     const currDate = date;
     const currTime = time;

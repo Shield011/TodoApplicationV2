@@ -93,7 +93,7 @@ function Todo() {
           Add Task{" "}
         </button>
         <div className="filter-dropdown">
-          <label className="Filter-title">Filter:</label>
+          {/* <label className="Filter-title">Filter:</label> */}
           <select
             className="filter-list"
             onClick = {(e) => setSortType(e.target.value)}
@@ -122,6 +122,8 @@ function Todo() {
             setTodos={setTodos}
           />
         )}
+
+   
       </div>
       <div>
         {todos.map((todo) => (

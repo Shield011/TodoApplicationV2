@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function EditTodo({
   toggle,
   todo,
+  text,
   editInput,
   setEditInput,
 }) {
@@ -21,12 +22,13 @@ function EditTodo({
         <label className="edit-task-label">Edit task:</label>
         <div>
           <textarea
-            rows="20"
-            cols="85"
+            rows="12"
+            cols="54"
             className="edit-input"
             type="text"
             name="editTask"
-            value={editInput}
+            placeholder = "Write here..."
+            value={text}
             onChange={editChangeHandler}
           ></textarea>
         </div>
