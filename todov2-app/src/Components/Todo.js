@@ -113,7 +113,7 @@ function Todo() {
           </select>
         </div>
 
-        {show === "active" && (
+        ({show === "active" && (
           <CreateTask
             toggle={toggle}
             input={input}
